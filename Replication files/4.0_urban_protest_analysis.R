@@ -89,7 +89,7 @@ model1a = glmer.nb(acled_count_lead_1 ~ log_world_pop + educationMean + log_imr 
                  nAGQ = 0)
 
 model1b = glmer.nb(acled_count_lead_1 ~ log_world_pop + educationMean + log_imr + election_event 
-                   + log_wb_gdp + wb_gdp_growth + ACD_conflict_year + (1|GID_0) +(1|GID_0/year), 
+                   + log_wb_gdp + wb_gdp_growth + ACD_conflict_year +(1|GID_0/year), 
                    data = smod_panel, 
                    control=glmerControl(optimizer="bobyqa", optCtrl=list(maxfun=2e5)),
                    nAGQ = 0)
